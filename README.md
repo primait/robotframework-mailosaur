@@ -1,6 +1,9 @@
 # robotframework-mailosaur
 
 [![Upload Python Package](https://github.com/primait/robotframework-mailosaur/actions/workflows/publish.yml/badge.svg?branch=master)](https://github.com/primait/robotframework-mailosaur/actions/workflows/publish.yml)
+[![Downloads](https://pepy.tech/badge/robotframework-mailosaur)](https://pepy.tech/project/robotframework-mailosaur)
+[![Downloads](https://pepy.tech/badge/robotframework-mailosaur/month)](https://pepy.tech/project/robotframework-mailosaur)
+[![Downloads](https://pepy.tech/badge/robotframework-mailosaur/week)](https://pepy.tech/project/robotframework-mailosaur)
 
 robotframework-mailosaur is a library wrapper that helps robotframework users to test emails in a more stable and easy way.
 
