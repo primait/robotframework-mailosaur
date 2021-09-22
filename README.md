@@ -24,6 +24,21 @@ Library           rfmailosaur    API_KEY=${api_key}    server_id=${server_id}   
 
 You're ready to go! 🎉
 
+## Examples
+
+you can find more extensive examples inside the `examples` folder.
+
+```
+Find email by body and test html text content
+    ${email}=    Get email by body    body=Welcome
+    html content should contain text    matcher=User    case_insensitive=${TRUE}    message=${email}
+```
+
+```
+Test email subject with regex
+    email subject should match    regex=[a-zA-Z0-9]
+```
+
 ## Keyword documentation
 
 robotframework-mailosaur has a keyword documentation which can be found inside the `docs` folder.
