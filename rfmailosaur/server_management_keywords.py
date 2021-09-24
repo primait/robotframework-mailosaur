@@ -1,6 +1,6 @@
 from mailosaur.models import ServerCreateOptions, MailosaurException
 
-class server_management_keywords(object):
+class ServerManagementKeywords(object):
     
     def delete_server(self, server_id: str):
         """
