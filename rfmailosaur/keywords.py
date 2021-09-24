@@ -1,11 +1,8 @@
 import re
-from robot.api.deco import keyword, library
-from robot.api import logger
-
 
 class keywords(object):
 
-    def email_subject_should_match(self, regex: str, message):
+    def email_subject_should_match(self, regex: str, message=None):
         """
         Checks the email subject of the last email received on the current server_domain matches the given regular expression.
         """
@@ -18,7 +15,7 @@ class keywords(object):
             raise Exception(
                 "The regexp does not match {}".format(last_email.subject))
 
-    def email_subject_should_contain(self, matcher: str, message):
+    def email_subject_should_contain(self, matcher: str, message=None):
         """
         Checks the email subject of the last email received on the current server_domain contains the matcher.
         """
@@ -42,7 +39,7 @@ class keywords(object):
         except Exception as e:
             raise e
 
-    def email_should_have_links(self, links_number: int, message):
+    def email_should_have_links(self, links_number: int, message=None):
         """
         Checks the last email contains X number of links where X == links_number.
         """
@@ -58,7 +55,7 @@ class keywords(object):
             raise Exception("AssertionError: {0} does not equal {1}".format(
                 links, links_number))
 
-    def email_should_have_attachments(self, attachments_number: int, message):
+    def email_should_have_attachments(self, attachments_number: int, message=None):
         """
         Checks the last email contains X number of attachments where X == attachments_number.
         """
@@ -74,7 +71,7 @@ class keywords(object):
             raise Exception("AssertionError: {0} does not equal {1}".format(
                 attachments, attachments_number))
 
-    def email_body_should_contain(self, matcher, case_insensitive: bool, message):
+    def email_body_should_contain(self, matcher, case_insensitive: bool, message=None):
         """
         Checks the last email's body contains a specific string (matcher).
 
@@ -95,7 +92,7 @@ class keywords(object):
             raise Exception("AssertionError: {0} is not contained {1}".format(
                 matcher, text))
 
-    def email_links_should_contain_text(self, text: str, message):
+    def email_links_should_contain_text(self, text: str, message=None):
         """
         Checks if atleast one of the links contained in the last email contains text.
         """
@@ -107,7 +104,7 @@ class keywords(object):
         links = [link.text for link in last_email.text.links]
         assert any(map(lambda link: text in link, links))
 
-    def email_sender_should_be(self, matcher: str, message):
+    def email_sender_should_be(self, matcher: str, message=None):
         """
         Checks that last email sender matches the given matcher.
         """
@@ -123,7 +120,7 @@ class keywords(object):
             raise Exception("AssertionError: '{0}' does not match sender '{1}'".format(
                 matcher, sender))
 
-    def html_content_should_contain_text(self, matcher: str, case_insensitive, message):
+    def html_content_should_contain_text(self, matcher: str, case_insensitive, message=None):
         """
         Checks that last email's HTML content contains sub-string
         """
