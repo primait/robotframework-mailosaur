@@ -1,11 +1,11 @@
 from rfmailosaur.keywords import keywords
 from rfmailosaur.version import VERSION
-from rfmailosaur.server_management_keywords import server_management_keywords
+from rfmailosaur.server_management_keywords import ServerManagementKeywords
 from mailosaur import MailosaurClient
 from mailosaur.models import SearchCriteria
 
 
-class rfmailosaur(keywords, server_management_keywords):
+class rfmailosaur(keywords, ServerManagementKeywords):
     __version__ = VERSION
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
 
