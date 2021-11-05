@@ -9,6 +9,10 @@ robotframework-mailosaur is a library wrapper that helps robotframework users to
 
 robotframework-mailosaur is a wrapper for mailosaur, which means that to use this library you must have a [mailosaur working account](https://mailosaur.com/).
 
+## Keyword documentation
+
+robotframework-mailosaur keyword doc can be found [here](https://prima.engineering/robotframework-mailosaur/keyword_doc.html).
+
 ## Install robotframework-mailosaur
 
 Install robotframework-mailosaur:
@@ -41,7 +45,3 @@ Find email by body and test html text content
 Test email subject with regex
     email subject should match    regex=[a-zA-Z0-9]
 ```
-
-## Keyword documentation
-
-robotframework-mailosaur has a keyword documentation which can be found inside the `docs` folder.
