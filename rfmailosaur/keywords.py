@@ -103,6 +103,13 @@ class keywords(object):
             last_email = message
         links = [link.text for link in last_email.text.links]
         assert any(map(lambda link: text in link, links))
+    
+    def get_links_href(self):
+        self.criteria.sent_to = self.server_domain
+        last_email = self.mailosaur.messages.get(
+            self.server_id, self.criteria)
+        links_href = [link.href for link in last_email.text.links]
+        return links_href
 
     def email_sender_should_be(self, matcher: str, message=None):
         """
