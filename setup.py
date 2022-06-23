@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="robotframework-mailosaur",
-    version="1.0",
+    version="1.0.1",
     author="Prima.it",
     author_email="",
     description="Mailosaur library for Robot framework",
