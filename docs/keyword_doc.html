@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 4.1 (Python 3.8.2 on darwin)" name="Generator">
+<meta content="Robot Framework 5.0.1 (Python 3.8.9 on darwin)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 :root {
@@ -31,6 +31,7 @@
         --highlighted-background-color: yellow;
         --less-important-text-color: #5b6a6f;
         --link-color: #52adff;
+        color-scheme: dark;
     }
 }
 body {
@@ -234,6 +235,23 @@ input.hamburger-menu:checked ~ span.hamburger-menu-3
 .shortcuts.keyword-wall a::after {
     content: '·';
     padding-left: 0.5rem;
+}
+.enum-type-members, .dt-usages-list {
+    list-style: none;
+    padding-left: 1em;
+}
+.dt-usages-list > li {
+    margin-bottom: 0.2em;
+}
+.dt-usages a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: inline-block;
+    font-size: 0.9em;
+}
+.dt-usages a::first-letter {
+    font-weight: bold;
+    letter-spacing: 0.1em;
 }
 .arguments-list-container {
     overflow-y: auto;
@@ -467,9 +485,6 @@ h4 {
     display: flex;
     flex-direction: column;
 }
-.enum-type-members, .dt-usage-list {
-    list-style: none;
-}
 .data-type-container {
     border-top: 1px solid var(--border-color);
     padding: 0.5rem 1.0rem 0.5rem 1.0rem;
@@ -571,6 +586,81 @@ span.or {
 .no-match .dt-name,
 .no-match .kw-name {
     color: var(--less-important-text-color);
+}
+.modal-icon {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    border: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%" width="100%"><path stroke="black" fill="none" stroke-width="2px" stroke-linecap="round" d="M1 8 L1 1 L8 1 M16 1 L23 1 L23 8 M23 16 L23 23 L16 23 M8 23 L1 23 L1 16"></path><path fill="black" stroke="none" stroke-width="1px" transform="scale(1.3) translate(-3 -2.5)" d="M19 7.97zm-8 9.2-4-2.3v-4.63l4 2.33v4.6zm1-6.33L8.04 8.53 12 6.25l3.96 2.28L12 10.84zm5 4.03-4 2.3v-4.6l4-2.33v4.63z"></path></svg>');
+}
+@media (prefers-color-scheme: dark) {
+    .modal-icon {
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%" width="100%"><path stroke="%23e2e1d7" fill="none" stroke-width="2px" stroke-linecap="round" d="M1 8 L1 1 L8 1 M16 1 L23 1 L23 8 M23 16 L23 23 L16 23 M8 23 L1 23 L1 16"></path><path fill="%23e2e1d7" stroke="none" stroke-width="1px" transform="scale(1.3) translate(-3 -2.5)" d="M19 7.97zm-8 9.2-4-2.3v-4.63l4 2.33v4.6zm1-6.33L8.04 8.53 12 6.25l3.96 2.28L12 10.84zm5 4.03-4 2.3v-4.6l4-2.33v4.63z"></path></svg>');
+    }
+}
+.modal-background, .modal {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+.modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+.modal {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 720px;
+    max-width: calc(100vw - 2rem);
+    margin: 0 auto;
+    height: calc(100vh - 6rem);
+    overflow: auto;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    z-index: 2;
+    transition-delay: 0.1s;
+}
+.modal-content {
+    margin-bottom: 3rem;
+}
+.modal > .modal-content > .data-type-container {
+    border-top: none;
+}
+.modal-close-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+.modal-close-button-container {
+    width: 720px;
+    max-width: calc(100vw - 2rem);
+    margin: 0 auto;
+    overflow: auto;
+}
+.modal-close-button {
+    margin: 0.5rem 0;
+    padding: 0.25rem 0.5rem;
+    border-radius:3px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+.modal-background.visible, .modal.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+#data-types-container {
+    display: none;
 }
 </style>
 <style media="all" type="text/css">
@@ -1102,7 +1192,7 @@ window.util = function () {
 jQuery.extend({highlight:function(e,t,n,r){if(e.nodeType===3){var i=e.data.match(t);if(i){var s=document.createElement(n||"span");s.className=r||"highlight";var o=e.splitText(i.index);o.splitText(i[0].length);var u=o.cloneNode(true);s.appendChild(u);o.parentNode.replaceChild(s,o);return 1}}else if(e.nodeType===1&&e.childNodes&&!/(script|style)/i.test(e.tagName)&&!(e.tagName===n.toUpperCase()&&e.className===r)){for(var a=0;a<e.childNodes.length;a++){a+=jQuery.highlight(e.childNodes[a],t,n,r)}}return 0}});jQuery.fn.unhighlight=function(e){var t={className:"highlight",element:"span"};jQuery.extend(t,e);return this.find(t.element+"."+t.className).each(function(){var e=this.parentNode;e.replaceChild(this.firstChild,this);e.normalize()}).end()};jQuery.fn.highlight=function(e,t){var n={className:"highlight",element:"span",caseSensitive:false,wordsOnly:false};jQuery.extend(n,t);if(e.constructor===String){e=[e]}e=jQuery.grep(e,function(e,t){return e!=""});e=jQuery.map(e,function(e,t){return e.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,"\\$&")});if(e.length==0){return this}var r=n.caseSensitive?"":"i";var i="("+e.join("|")+")";if(n.wordsOnly){i="\\b"+i+"\\b"}var s=new RegExp(i,r);return this.each(function(){jQuery.highlight(this,s,n.element,n.className)})}
 </script>
 <script type="text/javascript">
-libdoc = {"name": "rfmailosaur", "doc": "<p>Documentation for library <code>rfmailosaur</code>.</p>", "version": "0.8", "generated": "2021-09-24 16:03:18", "type": "LIBRARY", "scope": "GLOBAL", "docFormat": "HTML", "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/__init__.py", "lineno": 8, "tags": [], "inits": [{"name": "Init", "args": [{"name": "API_KEY", "types": [], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "API_KEY"}, {"name": "server_id", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "server_id=None"}, {"name": "server_domain", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "server_domain=None"}], "doc": "<p>The library needs a few arguments in order to work properly:</p>\n<ul>\n<li>API_KEY which you can retrieve from your mailosaur dashboard</li>\n</ul>\n<ul>\n<li>(optional) server_id which you can retrieve from your mailosaur dashboard</li>\n</ul>\n<ul>\n<li>(optional) server_domain which you can retrieve from your mailosaur dashboard</li>\n</ul>\n<p>Set these arguments when importing the library in the .robot file or set a __init__.robot file with the import and parameters.</p>\n<p>If you want to use dynamic servers you can use server management keywords such as \"create server\" and \"delete server\".</p>\n<p>In case dynamic server generation is used, then \"server id\" and \"server domain\" are automatically set during server creation with the keyword \"create server\": in addition you will need to pass the global api key as \"API_KEY\" parameter to the library.</p>", "shortdoc": "The library needs a few arguments in order to work properly:", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/__init__.py", "lineno": 12}], "keywords": [{"name": "Create Server", "args": [{"name": "server_name", "types": [], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "server_name"}], "doc": "<p>Creates a server with specified server name.</p>\n<p>This keyword returns the created server object which is accessible with the following attributes:</p>\n<ul>\n<li>id</li>\n<li>name</li>\n<li>users</li>\n<li>messages</li>\n<li>retention</li>\n<li>domain</li>\n<li>restricted</li>\n</ul>", "shortdoc": "Creates a server with specified server name.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/server_management_keywords.py", "lineno": 31}, {"name": "Delete All Emails", "args": [], "doc": "<p>deletes all emails contained in the currently selected server domain.</p>", "shortdoc": "deletes all emails contained in the currently selected server domain.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 32}, {"name": "Delete Server", "args": [{"name": "server_id", "types": ["str"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "server_id: str"}], "doc": "<p>Deletes the given server by server_id.</p>", "shortdoc": "Deletes the given server by server_id.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/server_management_keywords.py", "lineno": 5}, {"name": "Email Body Should Contain", "args": [{"name": "matcher", "types": [], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "matcher"}, {"name": "case_insensitive", "types": ["bool"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "case_insensitive: bool"}, {"name": "message", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the last email's body contains a specific string (matcher).</p>\n<p>If case_insensitive is set to True, then case is not checked in the substring.</p>", "shortdoc": "Checks the last email's body contains a specific string (matcher).", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 74}, {"name": "Email Links Should Contain Text", "args": [{"name": "text", "types": ["str"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "text: str"}, {"name": "message", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks if atleast one of the links contained in the last email contains text.</p>", "shortdoc": "Checks if atleast one of the links contained in the last email contains text.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 95}, {"name": "Email Sender Should Be", "args": [{"name": "matcher", "types": ["str"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "matcher: str"}, {"name": "message", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks that last email sender matches the given matcher.</p>", "shortdoc": "Checks that last email sender matches the given matcher.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 107}, {"name": "Email Should Have Attachments", "args": [{"name": "attachments_number", "types": ["int"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "attachments_number: int"}, {"name": "message", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the last email contains X number of attachments where X == attachments_number.</p>", "shortdoc": "Checks the last email contains X number of attachments where X == attachments_number.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 58}, {"name": "Email Should Have Links", "args": [{"name": "links_number", "types": ["int"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "links_number: int"}, {"name": "message", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the last email contains X number of links where X == links_number.</p>", "shortdoc": "Checks the last email contains X number of links where X == links_number.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 42}, {"name": "Email Subject Should Contain", "args": [{"name": "matcher", "types": ["str"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "matcher: str"}, {"name": "message", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the email subject of the last email received on the current server_domain contains the matcher.</p>", "shortdoc": "Checks the email subject of the last email received on the current server_domain contains the matcher.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 18}, {"name": "Email Subject Should Match", "args": [{"name": "regex", "types": ["str"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "regex: str"}, {"name": "message", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the email subject of the last email received on the current server_domain matches the given regular expression.</p>", "shortdoc": "Checks the email subject of the last email received on the current server_domain matches the given regular expression.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 5}, {"name": "Get Email By Body", "args": [{"name": "body", "types": [], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "body"}, {"name": "timeout", "types": [], "defaultValue": "10000", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "timeout=10000"}], "doc": "<p>Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).</p>", "shortdoc": "Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 182}, {"name": "Get Email By Sender", "args": [{"name": "sender", "types": [], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "sender"}, {"name": "timeout", "types": [], "defaultValue": "10000", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "timeout=10000"}], "doc": "<p>Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).</p>", "shortdoc": "Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 162}, {"name": "Get Email By Subject", "args": [{"name": "subject", "types": [], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "subject"}, {"name": "timeout", "types": [], "defaultValue": "10000", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "timeout=10000"}], "doc": "<p>Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).</p>", "shortdoc": "Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 172}, {"name": "Get Last Email", "args": [], "doc": "<p>Returns last email message.</p>\n<p>Note: this keyword returns a 'MessageSummary' object which does not include several properties. To get a more complete message, please use 'get email' keywords.</p>", "shortdoc": "Returns last email message.", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 150}, {"name": "Get Servers List", "args": [], "doc": "<p>Returns a list of all the available servers</p>", "shortdoc": "Returns a list of all the available servers", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/server_management_keywords.py", "lineno": 51}, {"name": "Html Content Should Contain Text", "args": [{"name": "matcher", "types": ["str"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "matcher: str"}, {"name": "case_insensitive", "types": [], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "case_insensitive"}, {"name": "message", "types": [], "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks that last email's HTML content contains sub-string</p>", "shortdoc": "Checks that last email's HTML content contains sub-string", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 123}, {"name": "List Emails", "args": [], "doc": "<p>Returns a list of all email messages</p>", "shortdoc": "Returns a list of all email messages", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 142}, {"name": "Retrieve Server", "args": [{"name": "server_id", "types": ["str"], "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "server_id: str"}], "doc": "<p>Retrieve a server by server_id, the retrieved server object is accessible with the following attributes:</p>\n<ul>\n<li>id</li>\n<li>name</li>\n<li>users</li>\n<li>messages</li>\n<li>retention</li>\n<li>domain</li>\n<li>restricted</li>\n</ul>", "shortdoc": "Retrieve a server by server_id, the retrieved server object is accessible with the following attributes:", "tags": [], "source": "/Users/andreagubellini/Documents/robotframework-mailosaur/rfmailosaur/server_management_keywords.py", "lineno": 14}], "dataTypes": {"enums": [], "typedDicts": []}}
+libdoc = {"specversion": 1, "name": "rfmailosaur", "doc": "<p>Documentation for library <code>rfmailosaur</code>.</p>", "version": "0.9", "generated": "2022-06-23 17:09:23", "type": "LIBRARY", "scope": "GLOBAL", "docFormat": "HTML", "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/__init__.py", "lineno": 8, "tags": [], "inits": [{"name": "__init__", "args": [{"name": "API_KEY", "types": [], "typedocs": {}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "API_KEY"}, {"name": "server_id", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "server_id=None"}, {"name": "server_domain", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "server_domain=None"}], "doc": "<p>The library needs a few arguments in order to work properly:</p>\n<ul>\n<li>API_KEY which you can retrieve from your mailosaur dashboard</li>\n</ul>\n<ul>\n<li>(optional) server_id which you can retrieve from your mailosaur dashboard</li>\n</ul>\n<ul>\n<li>(optional) server_domain which you can retrieve from your mailosaur dashboard</li>\n</ul>\n<p>Set these arguments when importing the library in the .robot file or set a __init__.robot file with the import and parameters.</p>\n<p>If you want to use dynamic servers you can use server management keywords such as \"create server\" and \"delete server\".</p>\n<p>In case dynamic server generation is used, then \"server id\" and \"server domain\" are automatically set during server creation with the keyword \"create server\": in addition you will need to pass the global api key as \"API_KEY\" parameter to the library.</p>", "shortdoc": "The library needs a few arguments in order to work properly:", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/__init__.py", "lineno": 12}], "keywords": [{"name": "Create Server", "args": [{"name": "server_name", "types": [], "typedocs": {}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "server_name"}], "doc": "<p>Creates a server with specified server name.</p>\n<p>This keyword returns the created server object which is accessible with the following attributes:</p>\n<ul>\n<li>id</li>\n<li>name</li>\n<li>users</li>\n<li>messages</li>\n<li>retention</li>\n<li>domain</li>\n<li>restricted</li>\n</ul>", "shortdoc": "Creates a server with specified server name.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/server_management_keywords.py", "lineno": 31}, {"name": "Delete All Emails", "args": [], "doc": "<p>deletes all emails contained in the currently selected server domain.</p>", "shortdoc": "deletes all emails contained in the currently selected server domain.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 32}, {"name": "Delete Server", "args": [{"name": "server_id", "types": ["str"], "typedocs": {"str": "string"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "server_id: str"}], "doc": "<p>Deletes the given server by server_id.</p>", "shortdoc": "Deletes the given server by server_id.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/server_management_keywords.py", "lineno": 5}, {"name": "Email Body Should Contain", "args": [{"name": "matcher", "types": [], "typedocs": {}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "matcher"}, {"name": "case_insensitive", "types": ["bool"], "typedocs": {"bool": "boolean"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "case_insensitive: bool"}, {"name": "message", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the last email's body contains a specific string (matcher).</p>\n<p>If case_insensitive is set to True, then case is not checked in the substring.</p>", "shortdoc": "Checks the last email's body contains a specific string (matcher).", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 74}, {"name": "Email Links Should Contain Text", "args": [{"name": "text", "types": ["str"], "typedocs": {"str": "string"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "text: str"}, {"name": "message", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks if atleast one of the links contained in the last email contains text.</p>", "shortdoc": "Checks if atleast one of the links contained in the last email contains text.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 95}, {"name": "Email Sender Should Be", "args": [{"name": "matcher", "types": ["str"], "typedocs": {"str": "string"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "matcher: str"}, {"name": "message", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks that last email sender matches the given matcher.</p>", "shortdoc": "Checks that last email sender matches the given matcher.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 114}, {"name": "Email Should Have Attachments", "args": [{"name": "attachments_number", "types": ["int"], "typedocs": {"int": "integer"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "attachments_number: int"}, {"name": "message", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the last email contains X number of attachments where X == attachments_number.</p>", "shortdoc": "Checks the last email contains X number of attachments where X == attachments_number.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 58}, {"name": "Email Should Have Links", "args": [{"name": "links_number", "types": ["int"], "typedocs": {"int": "integer"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "links_number: int"}, {"name": "message", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the last email contains X number of links where X == links_number.</p>", "shortdoc": "Checks the last email contains X number of links where X == links_number.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 42}, {"name": "Email Subject Should Contain", "args": [{"name": "matcher", "types": ["str"], "typedocs": {"str": "string"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "matcher: str"}, {"name": "message", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the email subject of the last email received on the current server_domain contains the matcher.</p>", "shortdoc": "Checks the email subject of the last email received on the current server_domain contains the matcher.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 18}, {"name": "Email Subject Should Match", "args": [{"name": "regex", "types": ["str"], "typedocs": {"str": "string"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "regex: str"}, {"name": "message", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks the email subject of the last email received on the current server_domain matches the given regular expression.</p>", "shortdoc": "Checks the email subject of the last email received on the current server_domain matches the given regular expression.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 5}, {"name": "Get Email By Body", "args": [{"name": "body", "types": [], "typedocs": {}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "body"}, {"name": "timeout", "types": [], "typedocs": {}, "defaultValue": "10000", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "timeout=10000"}], "doc": "<p>Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).</p>", "shortdoc": "Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 189}, {"name": "Get Email By Sender", "args": [{"name": "sender", "types": [], "typedocs": {}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "sender"}, {"name": "timeout", "types": [], "typedocs": {}, "defaultValue": "10000", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "timeout=10000"}], "doc": "<p>Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).</p>", "shortdoc": "Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 169}, {"name": "Get Email By Subject", "args": [{"name": "subject", "types": [], "typedocs": {}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "subject"}, {"name": "timeout", "types": [], "typedocs": {}, "defaultValue": "10000", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "timeout=10000"}], "doc": "<p>Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).</p>", "shortdoc": "Waits for a message to be found. Returns as soon as a message matching the specified search criteria is found. timeout: Specify how long to wait for a matching result (in milliseconds, default value is 10 seconds).", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 179}, {"name": "Get Last Email", "args": [], "doc": "<p>Returns last email message.</p>\n<p>Note: this keyword returns a 'MessageSummary' object which does not include several properties. To get a more complete message, please use 'get email' keywords.</p>", "shortdoc": "Returns last email message.", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 157}, {"name": "Get Links Href", "args": [], "doc": "", "shortdoc": "", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 107}, {"name": "Get Servers List", "args": [], "doc": "<p>Returns a list of all the available servers</p>", "shortdoc": "Returns a list of all the available servers", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/server_management_keywords.py", "lineno": 51}, {"name": "Html Content Should Contain Text", "args": [{"name": "matcher", "types": ["str"], "typedocs": {"str": "string"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "matcher: str"}, {"name": "case_insensitive", "types": [], "typedocs": {}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "case_insensitive"}, {"name": "message", "types": [], "typedocs": {}, "defaultValue": "None", "kind": "POSITIONAL_OR_NAMED", "required": false, "repr": "message=None"}], "doc": "<p>Checks that last email's HTML content contains sub-string</p>", "shortdoc": "Checks that last email's HTML content contains sub-string", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 130}, {"name": "List Emails", "args": [], "doc": "<p>Returns a list of all email messages</p>", "shortdoc": "Returns a list of all email messages", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/keywords.py", "lineno": 149}, {"name": "Retrieve Server", "args": [{"name": "server_id", "types": ["str"], "typedocs": {"str": "string"}, "defaultValue": null, "kind": "POSITIONAL_OR_NAMED", "required": true, "repr": "server_id: str"}], "doc": "<p>Retrieve a server by server_id, the retrieved server object is accessible with the following attributes:</p>\n<ul>\n<li>id</li>\n<li>name</li>\n<li>users</li>\n<li>messages</li>\n<li>retention</li>\n<li>domain</li>\n<li>restricted</li>\n</ul>", "shortdoc": "Retrieve a server by server_id, the retrieved server object is accessible with the following attributes:", "tags": [], "source": "/Users/andreagubellini/Documents/projects/robotframework-mailosaur/rfmailosaur/server_management_keywords.py", "lineno": 14}], "dataTypes": {"enums": [], "typedDicts": []}, "typedocs": [{"type": "Standard", "name": "boolean", "doc": "<p>Strings <code>TRUE</code>, <code>YES</code>, <code>ON</code> and <code>1</code> are converted to Boolean <code>True</code>, the empty string as well as strings <code>FALSE</code>, <code>NO</code>, <code>OFF</code> and <code>0</code> are converted to Boolean <code>False</code>, and the string <code>NONE</code> is converted to the Python <code>None</code> object. Other strings and other accepted values are passed as-is, allowing keywords to handle them specially if needed. All string comparisons are case-insensitive.</p>\n<p>Examples: <code>TRUE</code> (converted to <code>True</code>), <code>off</code> (converted to <code>False</code>), <code>example</code> (used as-is)</p>", "usages": ["Email Body Should Contain"], "accepts": ["string", "integer", "float", "None"]}, {"type": "Standard", "name": "integer", "doc": "<p>Conversion is done using Python's <a href=\"https://docs.python.org/library/functions.html#int\">int</a> built-in function. Floating point numbers are accepted only if they can be represented as integers exactly. For example, <code>1.0</code> is accepted and <code>1.1</code> is not.</p>\n<p>Starting from RF 4.1, it is possible to use hexadecimal, octal and binary numbers by prefixing values with <code>0x</code>, <code>0o</code> and <code>0b</code>, respectively.</p>\n<p>Starting from RF 4.1, spaces and underscores can be used as visual separators for digit grouping purposes.</p>\n<p>Examples: <code>42</code>, <code>-1</code>, <code>0b1010</code>, <code>10 000 000</code>, <code>0xBAD_C0FFEE</code></p>", "usages": ["Email Should Have Attachments", "Email Should Have Links"], "accepts": ["string", "float"]}, {"type": "Standard", "name": "string", "doc": "<p>All arguments are converted to Unicode strings.</p>", "usages": ["Delete Server", "Email Links Should Contain Text", "Email Sender Should Be", "Email Subject Should Contain", "Email Subject Should Match", "Html Content Should Contain Text", "Retrieve Server"], "accepts": ["Any"]}]}
 </script>
 <title></title>
 </head>
@@ -1123,44 +1213,29 @@ libdoc = {"name": "rfmailosaur", "doc": "<p>Documentation for library <code>rfma
     window.addEventListener("hashchange", function() {
       document.getElementsByClassName("hamburger-menu")[0].checked = false;
     }, false);
+    window.addEventListener("hashchange", function() {
+        if (window.location.hash.indexOf('#type-') == 0) {
+            const hash = '#' + decodeURI(window.location.hash.slice(6));
+            const typeDoc = document.querySelector(".data-types").querySelector(hash);
+            if (typeDoc) {
+              showModal(typeDoc);
+            }
+        }
+    }, false);
 </script>
 
 <script type="text/javascript">
-
-    function linkArgs(container, dataTypes, usageName) {
-      container.forEach(function(keyword) {
-        let user = usageName || keyword.name
-          keyword.args.forEach(function (arg) {
-            arg.linked = arg.types.filter(function(value) {
-              return dataTypes.filter(function (dataType) {
-                 if (dataType.name === value) {
-                   if (dataType.usage.indexOf(user) === -1) {
-                    dataType.usage.push(user);
-                   }
-                   return true;
-                 }
-                 return false;
-              })[0];
-            });
-          })
-        }
-      );
-    }
 
     $(document).ready(function() {
         parseTemplates();
         document.title = libdoc.name;
         storage.init('libdoc');
-        libdoc.dataTypes = libdoc.dataTypes.enums.concat(libdoc.dataTypes.typedDicts);
-        libdoc.dataTypes = libdoc.dataTypes.map(function(dt) {
-          dt.usage = [];
-          return dt;
-        })
-        libdoc.dataTypes.sort(compare)
-        linkArgs(libdoc.inits, libdoc.dataTypes, "Importing");
-        linkArgs(libdoc.keywords, libdoc.dataTypes);
         renderTemplate('base', libdoc, $('body'));
         if (libdoc.inits.length) {
+            libdoc.typedocs.map(function(type) {
+                var index = type.usages.indexOf('__init__');
+                if (index != -1) type.usages[index] = 'Importing';
+            });
             renderTemplate('importing', libdoc);
         }
         renderTemplate('shortcuts', libdoc);
@@ -1185,17 +1260,8 @@ libdoc = {"name": "rfmailosaur", "doc": "<p>Documentation for library <code>rfma
             openKeywordWall();
           }
       }, 0);
+        createModal();
     });
-
-     function compare( a, b ) {
-      if ( a.name < b.name ){
-        return -1;
-      }
-      if ( a.name > b.name ){
-        return 1;
-      }
-      return 0;
-    }
 
     function parseTemplates() {
         $('script[type="text/x-jquery-tmpl"]').map(function (idx, elem) {
@@ -1371,10 +1437,79 @@ libdoc = {"name": "rfmailosaur", "doc": "<p>Documentation for library <code>rfma
             renderTemplate('tags', libdoc);
         }
         document.getElementById("keyword-statistics-header").innerText = ''+libdoc.keywords.length;
-        if (libdoc.dataTypes.length) {
-          document.getElementById("type-statistics-header").innerText = '' + libdoc.dataTypes.length;
+        if (libdoc.typedocs.length) {
+            document.getElementById("type-statistics-header").innerText = '' + libdoc.typedocs.length;
         }
         history.replaceState && history.replaceState(null, '', location.pathname);
+    }
+
+    function createModal() {
+        const modalBackground = document.createElement('div');
+        modalBackground.id = 'modal-background';
+        modalBackground.classList.add('modal-background');
+        modalBackground.addEventListener('click', ({ target }) => {
+            if (target.id === 'modal-background') hideModal()
+        })
+
+        const modalCloseButton = document.createElement('button');
+        modalCloseButton.innerHTML = `<svg xmlns="
+      http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2em" height="2em" className="block" data-v-2754030d="" data-v-512b0344="">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+                    data-v-2754030d="" fill="var(--text-color)"></path></svg>`;
+        modalCloseButton.classList.add('modal-close-button');
+        const modalCloseButtonContainer = document.createElement('div');
+        modalCloseButtonContainer.classList.add('modal-close-button-container');
+        modalCloseButtonContainer.appendChild(modalCloseButton);
+        modalCloseButton.addEventListener('click', () => {
+            hideModal()
+        })
+        modalBackground.appendChild(modalCloseButtonContainer);
+        modalCloseButtonContainer.addEventListener('click', () => {
+            hideModal()
+        })
+
+        const modal = document.createElement('div');
+        modal.id = 'modal';
+        modal.classList.add('modal');
+        modal.addEventListener('click', ({ target }) => {
+            if (target.tagName.toUpperCase() === 'A') hideModal()
+        })
+
+
+        const modalContent = document.createElement('div');
+        modalContent.id = 'modal-content';
+        modalContent.classList.add('modal-content');
+        modal.appendChild(modalContent);
+
+        modalBackground.appendChild(modal);
+        document.body.appendChild(modalBackground);
+        document.addEventListener('keydown', ({ key }) => {
+            if (key === 'Escape') hideModal()
+        })
+    }
+    function showModal(content) {
+        const modalBackground = document.getElementById('modal-background');
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+        modalBackground.classList.add('visible');
+        modal.classList.add('visible');
+        modalContent.appendChild(content.cloneNode(true));
+        document.body.style.overflow = 'hidden';
+    }
+    function hideModal() {
+        const modalBackground = document.getElementById('modal-background');
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+
+        modalBackground.classList.remove('visible');
+        modal.classList.remove('visible');
+        document.body.style.overflow = 'auto';
+        if (window.location.hash.indexOf('#type-') == 0)
+            history.pushState("", document.title, window.location.pathname);
+        // modal is hidden with a fading transition, timeout prevents premature emptying of modal
+        setTimeout(() => {
+            modalContent.innerHTML = '';
+        }, 200);
     }
 
     // http://stackoverflow.com/a/18484799
@@ -1385,7 +1520,6 @@ libdoc = {"name": "rfmailosaur", "doc": "<p>Documentation for library <code>rfma
             timer = setTimeout(callback, ms);
         };
     })();
-
 </script>
 
 <script type="text/x-jquery-tmpl" id="base-template">
@@ -1599,34 +1733,43 @@ ${name}
 {{/if}}
 
 {{if types.length}}
-  <span class="arg-type" title="Argument '${name}' will be converter to type ${types}">
-    ${( $data.linked = linked ),''}
-    {{each types}}&lt;{{if $data.linked.indexOf($value) > -1}}<a class="type" href="#${$value}">${$value}</a>{{else}}<span class="type">${$value}</span>{{/if}}&gt;<span class="or"></span>{{/each}}
+  <span class="arg-type">
+    {{each types}}
+      {{if $value in $data.typedocs}}
+          &lt;<a style="cursor: pointer;" class="type" title="Click to show type information" onclick="showModal(${$data.typedocs[$value]})">${$value}</a>&gt;
+      {{else}}
+          &lt;<span class="type">${$value}</span>&gt;
+      {{/if}}
+      <span class="or"></span>
+    {{/each}}
   </span>
 {{/if}}
 </script>
 
 
 <script type="text/x-jquery-tmpl" id="data-types-template">
-    {{if dataTypes.length}}
+  {{if typedocs.length}}
     <h2 id="Data types">Data types</h2>
     <div class="data-types">
-        {{each dataTypes}}
+      {{each typedocs}}
         {{tmpl($value) 'data-type-template'}}
-        {{/each}}
+      {{/each}}
     </div>
-    {{/if}}
+  {{/if}}
 </script>
 
 <script type="text/x-jquery-tmpl" id="data-type-template">
     <div class="data-type-container {{if hidden}}no-{{/if}}match" id="${name}">
        <div class="data-type-name">
-            <h2>Type:
-            <a class="dt-name" href="#${encodeURIComponent(name)}"
-               title="Link to this data type">${name}</a>
-            </h2>
+            <h2>${name} (${type})</h2>
        </div>
        <div class="data-type-content">
+          {{if doc}}
+            <div class="dt-docs">
+              <h4>Documentation</h4>
+              <div class="dtdoc doc">{{html doc}}</div>
+            </div>
+          {{/if}}
           {{if members}}
             <div class="dt-members">
               <h4>Allowed Values</h4>
@@ -1634,6 +1777,9 @@ ${name}
                 {{each members}}
                 <li>
                   <span class="enum-member">${$value.name}</span>
+                  {{if accepts.indexOf("integer") != -1}}
+                    &nbsp; (<span class="enum-member">${$value.value}</span>)
+                  {{/if}}
                 </li>
                 {{/each}}
               </ul>
@@ -1655,20 +1801,22 @@ ${name}
                 </div>
             </div>
           {{/if}}
-          {{if doc}}
+          {{if accepts.length}}
             <div class="dt-docs">
-              <h4>Documentation</h4>
-              <div class="dtdoc doc">{{html doc}}</div>
+              <h4>Converted Types</h4>
+              <ul class="dt-usages-list">
+              {{each accepts}}
+                <li>${$value}</li>
+              {{/each}}
+              </ul>
             </div>
           {{/if}}
-          {{if usage}}
-            <div class="dt-usage">
-              <h4>Used in</h4>
-              <ul class="dt-usage-list">
-                {{each usage}}
-                <li>
-                <a href="#${encodeURIComponent($value)}">${$value}</a>
-                </li>
+          {{if usages.length}}
+            <div class="dt-usages">
+              <h4>Usages</h4>
+              <ul class="dt-usages-list">
+                {{each usages}}
+                  <li><a href="#${encodeURIComponent($value)}">${$value}</a></li>
                 {{/each}}
               </ul>
             </div>
